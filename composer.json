@@ -1,0 +1,38 @@
+{
+  "name": "robier/date",
+  "type": "library",
+  "description": "Simple date implementation of ISO 8601 standard",
+  "homepage": "https://github.com/robier/date",
+  "license": "MIT",
+  "prefer-stable" : true,
+  "authors": [
+    {
+      "name": "Robert Premar",
+      "email": "robert.premar@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "autoload": {
+    "psr-4": {"Robier\\Date\\": "src/Date"}
+  },
+  "autoload-dev": {
+    "psr-4": {"Robier\\Date\\Tests\\": "tests/src/"}
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1",
+    "friendsofphp/php-cs-fixer": "^2.3",
+    "codeclimate/php-test-reporter": "^0.4.4"
+  },
+  "scripts": {
+    "lint" : "vendor/bin/php-cs-fixer fix",
+    "tests:clover" : "vendor/bin/phpunit --coverage-clover=\"tests/coverage/clover.xml\"",
+    "send:coverage" : "vendor/bin/test-reporter --coverage-report=\"tests/coverage/clover.xml\"",
+    "docker:build" : "tests/docker/buildDocker",
+    "docker:tests" : "tests/docker/runDocker vendor/bin/phpunit",
+    "docker:tests:coverage" : "tests/docker/runDocker vendor/bin/phpunit --coverage-text --colors=never",
+    "docker:tests:coverage-html" : "tests/docker/runDocker vendor/bin/phpunit --coverage-html=\"tests/coverage/html\""
+  }
+}
