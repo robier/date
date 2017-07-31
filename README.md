@@ -3,6 +3,9 @@ Date
 
 Simple date implementation of ISO 8601 standard.
 
+[![Build Status](https://travis-ci.org/robier/date.svg?branch=master)](https://travis-ci.org/robier/date)
+[![Test Coverage](https://codeclimate.com/github/robier/date/badges/coverage.svg)](https://codeclimate.com/github/robier/date/coverage)
+
 
 ### Introduction
 
