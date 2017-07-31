@@ -16,7 +16,7 @@
     "php": "^7.1"
   },
   "autoload": {
-    "psr-4": {"Robier\\Date\\": "src/Date"}
+    "psr-4": {"Robier\\": "src/"}
   },
   "autoload-dev": {
     "psr-4": {"Robier\\Date\\Tests\\": "tests/src/"}
