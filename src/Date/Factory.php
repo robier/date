@@ -70,6 +70,16 @@ abstract class Factory
     }
 
     /**
+     * Returns 0 Date instance
+     *
+     * @return Date
+     */
+    public static function zero(): Date
+    {
+        return static::new(0, 0, 0);
+    }
+
+    /**
      * Creates representation of date according to the ISO 8601 standard - using weeks and day offsets rather
      * than specific dates.
      *

@@ -2,9 +2,9 @@
 
 namespace Robier;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Robier\Date\Offset;
 use Robier\Date\Range;
 
 /**
@@ -49,6 +49,16 @@ class Date
     }
 
     /**
+     * Returns date offset manager
+     *
+     * @return Offset
+     */
+    public function offset(): Offset
+    {
+        return new Offset($this);
+    }
+
+    /**
      * Adds provided number of days and returns new instance of Date.
      *
      * @param int $offset Number of days current Date will be incremented.
@@ -57,7 +67,7 @@ class Date
      */
     public function next(int $offset = 1): self
     {
-        return Date\Factory::dateTime($this->toDateTime()->add($this->interval($offset)));
+        return $this->offset()->day($offset);
     }
 
     /**
@@ -69,19 +79,7 @@ class Date
      */
     public function previous(int $offset = 1): self
     {
-        return Date\Factory::dateTime($this->toDateTime()->sub($this->interval($offset)));
-    }
-
-    /**
-     * Creates a DateInterval by provided day offset.
-     *
-     * @param int $offset How many days interval should hold.
-     *
-     * @return DateInterval
-     */
-    protected function interval(int $offset): DateInterval
-    {
-        return new DateInterval(sprintf('P%dD', $offset));
+        return $this->offset()->day( -1 * abs($offset));
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace Robier\Date\Tests;
 
 use DateInterval;
-use DateTimeImmutable;
+use DateTime;
 use Robier\Date;
 
 trait Mocks
@@ -17,7 +17,7 @@ trait Mocks
     {
         $dateMock = $this->stubDate();
 
-        $dateTime = DateTimeImmutable::createFromFormat('Y-m-d', $date);
+        $dateTime = DateTime::createFromFormat('Y-m-d', $date);
 
         $dateMock->method('day')->willReturn((int) $dateTime->format('j'));
         $dateMock->method('month')->willReturn((int) $dateTime->format('n'));

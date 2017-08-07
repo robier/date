@@ -102,4 +102,13 @@ class FactoryTest extends TestCase
 
         $this->assertEquals($string, $date->toString());
     }
+
+    public function testZeroMethod()
+    {
+        $date = Factory::zero();
+
+        $this->assertEquals(0, $date->day());
+        $this->assertEquals(0, $date->month());
+        $this->assertEquals(0, $date->year());
+    }
 }

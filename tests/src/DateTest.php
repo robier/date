@@ -85,4 +85,11 @@ class DateTest extends TestCase
 
         $this->assertInstanceOf(Date\Range::class, $date->to(new Date(1991, 12, 1)));
     }
+
+    public function testOffsetMethod()
+    {
+        $date = new Date(1991, 11, 14);
+
+        $this->assertInstanceOf(Date\Offset::class, $date->offset());
+    }
 }
